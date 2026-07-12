@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../context/AuthContext';
 import api from '../../services/api';
 import toast from 'react-hot-toast';
 import CreateReservation from './CreateReservation';
 import Spinner from '../common/Spinner';
 
 const CustomerDashboard = () => {
-  const { user } = useAuth();
   const [reservations, setReservations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showCreateForm, setShowCreateForm] = useState(false);
