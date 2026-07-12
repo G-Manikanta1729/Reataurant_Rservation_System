@@ -9,7 +9,11 @@ const connectDB = require('./src/config/database');
 dotenv.config();
 
 // Connect to database
-connectDB();
+connectDB().then(() => {
+  // Seed data after successful connection
+  const seedData = require('./src/utils/seedData');
+  seedData();
+});
 
 const app = express();
 
